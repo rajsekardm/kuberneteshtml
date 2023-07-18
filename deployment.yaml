@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-static-site
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-static-site
+  template:
+    metadata:
+      labels:
+        app: my-static-site
+    spec:
+      containers:
+      - name: my-static-site
+        image: my-static-site
+        ports:
+        - containerPort: 80
